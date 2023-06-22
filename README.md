@@ -18,3 +18,7 @@ Tech Stacks
     Next.js
     SpringBoot
     Java
+
+Figma Link
+    https://www.figma.com/file/u5wZNnpAEvS2kj5myuQWpF/ontrack?type=design&node-id=0-1&mode=design&t=aWu9TfF3156AflmL-0
+    
