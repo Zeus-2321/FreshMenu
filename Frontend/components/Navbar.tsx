@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 
 import "tailwindcss/tailwind.css";
 
-
-
 export default function Navbar() {
   const [customclass, changeCustomclass] = useState({
     dot: "ml-5 hover:animate-[wave_5s_ease-in-out_2] ",
@@ -28,31 +26,50 @@ export default function Navbar() {
     }
   }, []);
 
-
   return (
-    <div className=" bg-yellow-300 py-2 flex items-center h-24 justify-between">
+    <div className="  py-2 flex items-center h-24 justify-between bg-navbarbg ">
       <div className="flex items-center">
-        <div  className={`${customclass.dot}`}>
-          <Image src="/logodot.png" width={50} height={70} alt="dot of logo" />
+        <div className={`${customclass.dot}`}>
+          <Image
+            src="/assets/navbar/logodot.png"
+            width={50}
+            height={70}
+            alt="dot of logo"
+          />
         </div>
         <div className={`${customclass.text}`}>
           <Image
-            src="/logotext.png"
+            src="/assets/navbar/logotext.png"
             width={110}
             height={30}
             alt="text of logo"
           />
         </div>
       </div>
-      <div className="mx-4">
-        <Link className="mx-2 text-cyan-700 text-2xl" href={"/"}>
-          Home
+      <div className="mx-4 flex items-center">
+        <Link className="mx-2 mb-1" href={"/"}>
+          <Image
+            src="/assets/navbar/Home.png "
+            width={90}
+            height={25}
+            alt="home"
+          />
         </Link>
-        <Link className="mx-2 text-cyan-700 text-2xl" href={"/blog"}>
-          Blogs
+        <Link className="mx-2" href={"/blog"}>
+          <Image
+            src="/assets/navbar/Blogs.png "
+            width={80}
+            height={25}
+            alt="blog"
+          />
         </Link>
-        <Link className="mx-2 text-cyan-700 text-2xl" href={"/notes"}>
-          Notes
+        <Link className="mx-2" href={"/notes"}>
+          <Image
+            src="/assets/navbar/Notes.png "
+            width={80}
+            height={25}
+            alt="notes"
+          />
         </Link>
       </div>
     </div>

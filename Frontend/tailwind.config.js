@@ -7,6 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        Gideon: 'Gideon Roman, cursive',
+        Caslon: 'Libre Caslon Display, serif',
+      },
+      backgroundImage: {
+        navbarbg:'url(/assets/navbar/navbar-bg.png)',
+        blackbg:'url(/assets/backgrounds/black-bg.png)',
+        bluemarble:'url(/assets/backgrounds/bluemarble.png)',
+        gold:'url(/assets/backgrounds/gold.jpg)',
+        whitebg:'url(/assets/backgrounds/white-bg.png)'
+      },
       keyframes: {
         wave: {
           "0%": { transform: "rotate(0.0deg)" },
@@ -37,16 +48,21 @@ module.exports = {
           "10%": { width: "2px", height: "2px", opacity: 0.5 },
           "20%": { width: "5px", height: "5px", opacity: 0.7 },
           "30%": { width: "10px", height: "10px", opacity: 0.8 },
-          "40%": { width: "15px", height: "15px", opacity: 0.9},
+          "40%": { width: "15px", height: "15px", opacity: 0.9 },
           "50%": { width: "17px", height: "17px", opacity: 0.95 },
           "60%": { width: "20px", height: "20px", opacity: 1 },
           "100%": { width: "25px", height: "25px", opacity: 1 },
         },
+        rotate:{
+          "0%":{transform:'rotate(0deg)'},
+          "100%":{transform:'rotate(359deg)'}
+        }
       },
       animation: {
         "slide-transition": "slide 0.5s linear forwards",
         "rotate-stop": "custrot 1s linear forwards",
-        "pop-out": "pop 3s linear forwards",
+        "pop-out": "pop 1.5s linear forwards",
+        "rotation":"rotate 2s linear infinite"
       },
     },
   },

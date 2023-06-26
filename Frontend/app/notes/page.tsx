@@ -10,7 +10,7 @@ const Zen = dynamic(() => import("@/components/Zen"));
 const Notesdisplay = dynamic(() => import("@/components/Notes"));
 
 export default function Notes() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [customClass, setCustomClass] = useState({ sidebar: "hidden" });
   const [renderFile, setRenderFile] = useState("Notesdisplay");
   const [notes, setNotes] = useState<string[]>([]);
@@ -54,7 +54,7 @@ export default function Notes() {
       <Image
         className="absolute top-9 left-9 animate-pop-out cursor-pointer"
         onClick={clickHandler}
-        src="/hamburger.svg"
+        src="/assets/navbar/hamburger.svg"
         width={25}
         height={25}
         alt="hamburger"
@@ -66,7 +66,7 @@ export default function Notes() {
             onClick={() => {
               setRenderFile("Notesdisplay");
             }}
-            className="text-lg font-bold mt-5 mb-2 p-2 mx-5 w-[68px] text-yellow-400 border border-yellow-500 cursor-pointer"
+            className="text-lg font-bold mt-5 mb-2 p-2 mx-5 w-[68px] text-yellow-400 border border-yellow-500 cursor-pointer font-Caslon"
           >
             Notes
           </h1>
