@@ -1,4 +1,14 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+
 public class App {
+
     // Parent class
     static class BankAccount {
         private String accountNumber;
@@ -54,7 +64,82 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-         // Primitive variable declarations and assignments
+    // Example of exception handling
+    try {
+        int dividend = 10;
+        int divisor = 0;
+        int result = dividend / divisor;
+        System.out.println("Result: " + result);
+    } catch (ArithmeticException e) {
+        System.out.println("Error: Division by zero");
+    } finally {
+        System.out.println("Finally block executed");
+        // future chirag rememeber to not put return in this block 
+    }
+        // Map example
+        Map<Integer, String> students = new HashMap<>();
+
+        // Adding entries to the map
+        students.put(1, "John");
+        students.put(2, "Alice");
+        students.put(3, "Bob");
+
+        // Accessing values in the map
+        System.out.println(students.get(1));  // Output: John
+        System.out.println(students.get(2));  // Output: Alice
+
+        // Checking if a key exists in the map
+        System.out.println(students.containsKey(3));  // Output: true
+
+        // Removing an entry from the map
+        students.remove(2);
+
+        // Iterating over the map
+        for (Map.Entry<Integer, String> entry : students.entrySet()) {
+            int id = entry.getKey();
+            String name = entry.getValue();
+            System.out.println("ID: " + id + ", Name: " + name);
+        }
+
+        // Set example
+        Set<String> fruits = new HashSet<>();
+
+        // Adding elements to the set
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Orange");
+
+        // Checking if an element exists in the set
+        System.out.println(fruits.contains("Apple"));  // Output: true
+
+        // Removing an element from the set
+        fruits.remove("Banana");
+
+        // Iterating over the set
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+
+        // List example
+        List<Integer> numbers = new ArrayList<>();
+
+        // Adding elements to the list
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+
+        // Accessing elements in the list
+        System.out.println(numbers.get(0));  // Output: 1
+        System.out.println(numbers.get(1));  // Output: 2
+
+        // Iterating over the list
+        for (int number : numbers) {
+            System.out.println(number);
+        }
+
+        // Annotation example
+        @SuppressWarnings("unused")
+        // Primitive variable declarations and assignments
         byte myByte = 10;
         short myShort = 1000;
         int myInt = 100000;
@@ -63,10 +148,8 @@ public class App {
         double myDouble = 3.14159;
         char myChar = 'A';
         boolean myBoolean = true;
-        
 
-
-        // control flow 
+        // Control flow example
         int num = 10;
 
         // Example of if-else statement
@@ -128,5 +211,30 @@ public class App {
         account2.deposit(1000);
         account2.withdraw(500);
         account2.applyInterest();
+
+        // Stream creation and operations example
+        List<String> names = List.of("John", "Alice", "Bob", "Mary", "David");
+
+        // Filtering names that start with 'A'
+        List<String> filteredNames = names.stream()
+                .filter(name -> name.startsWith("A"))
+                .collect(Collectors.toList());
+        System.out.println("Filtered Names: " + filteredNames);
+
+        // Mapping names to uppercase
+        List<String> uppercaseNames = names.stream()
+                .map(String::toUpperCase)
+                .collect(Collectors.toList());
+        System.out.println("Uppercase Names: " + uppercaseNames);
+
+        // Counting the number of names
+        long count = names.stream().count();
+        System.out.println("Count: " + count);
+
+        // Parallel stream example
+        List<String> fruitsUpperCase = fruits.parallelStream()
+                .map(String::toUpperCase)
+                .collect(Collectors.toList());
+        System.out.println("Parallel Stream Uppercase Fruits: " + fruitsUpperCase);
     }
 }
